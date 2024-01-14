@@ -35,7 +35,7 @@ public class User_Registration {
               System.out.println("Invalid last name. Please ensure it starts with a capital letter and has at least 3 characters.");
           }
           
-          scanner.close();
+        //  scanner.close();
       }
 
       private static boolean isValidLastName(String lastName) {
@@ -46,13 +46,36 @@ public class User_Registration {
           return lastName.matches(regex);
       }
   
-    
+      public static void UC3(){
+      	Scanner scanner = new Scanner(System.in);
+      	 System.out.println("Enter your email address: ");
+         String email = scanner.nextLine();
+
+         // Validate the email address
+         if (isValidEmail(email)) {
+             System.out.println("Valid email address: " + email);
+         } else {
+             System.out.println("Invalid email address. Please enter a valid email with precise @ and . positions.");
+         }
+
+         scanner.close();
+     }
+
+     private static boolean isValidEmail(String email) {
+         // Regular expression for validating the email address
+         String regex = "^[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)@[a-zA-Z]+(\\.[a-zA-Z]{2,})(\\.[a-zA-Z]{2,})$";
+
+         // Use String.matches() to check if the input matches the regular expression
+         return email.matches(regex);
+     }
+ 
 
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 UC1();
 UC2();
+UC3();
 	}
 
 }
