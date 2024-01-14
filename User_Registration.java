@@ -81,7 +81,7 @@ public class User_Registration {
              System.out.println("Invalid mobile number. Please enter a valid mobile number in the format '91 1234567890'.");
          }
 
-         scanner.close();
+        // scanner.close();
      }
 
      private static boolean isValidMobileNumber(String mobileNumber) {
@@ -91,8 +91,26 @@ public class User_Registration {
          // Use String.matches() to check if the input matches the regular expression
          return mobileNumber.matches(regex);
      }
- 
-     
+     public static void UC5(){
+     Scanner scanner = new Scanner(System.in);
+     System.out.println("Enter your password: ");
+     String password = scanner.nextLine();
+
+     // Validate the password
+     if (isValidPassword(password)) {
+         System.out.println("Valid password: " + password);
+     } else {
+         System.out.println("Invalid password. Please ensure it has a minimum of 8 characters.");
+     }
+
+     scanner.close();
+ }
+
+ private static boolean isValidPassword(String password) {
+     // Check if the password has a minimum of 8 characters
+     return password.length() >= 8;
+ }
+
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -100,6 +118,7 @@ UC1();
 UC2();
 UC3();
 UC4();
+UC5();
 	}
 
 }
