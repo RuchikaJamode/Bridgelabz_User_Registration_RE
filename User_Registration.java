@@ -58,7 +58,7 @@ public class User_Registration {
              System.out.println("Invalid email address. Please enter a valid email with precise @ and . positions.");
          }
 
-         scanner.close();
+         //scanner.close();
      }
 
      private static boolean isValidEmail(String email) {
@@ -69,13 +69,37 @@ public class User_Registration {
          return email.matches(regex);
      }
  
+     public static void UC4(){
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("Enter your mobile number: ");
+         String mobileNumber = scanner.nextLine();
 
+         // Validate the mobile number
+         if (isValidMobileNumber(mobileNumber)) {
+             System.out.println("Valid mobile number: " + mobileNumber);
+         } else {
+             System.out.println("Invalid mobile number. Please enter a valid mobile number in the format '91 1234567890'.");
+         }
+
+         scanner.close();
+     }
+
+     private static boolean isValidMobileNumber(String mobileNumber) {
+         // Regular expression for validating the mobile number
+         String regex = "^91\\s[1-9]\\d{9}$";
+
+         // Use String.matches() to check if the input matches the regular expression
+         return mobileNumber.matches(regex);
+     }
+ 
+     
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 UC1();
 UC2();
 UC3();
+UC4();
 	}
 
 }
